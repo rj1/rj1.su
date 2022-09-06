@@ -1,0 +1,18 @@
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	{{- $title := ( .Title ) -}}
+	{{- $siteTitle := ( .Site.Title ) -}}
+	{{- if .IsHome -}}
+	<title>{{ $siteTitle }}</title>
+	{{- else -}}
+	<title>{{ $siteTitle }} > {{ $title | lower }}</title>
+	{{- end -}}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
+	{{ with .OutputFormats.Get "rss" -}}
+	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <link rel="icon" href="/favicon.svg">
+</head>

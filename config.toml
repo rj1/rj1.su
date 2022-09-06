@@ -1,0 +1,33 @@
+baseURL = "https://rj1.neocities.org"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "rj1"
+theme = "rj1"
+copyright = "rj1"
+pygmentsstyle = "dracula"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[permalinks]
+    post = "/notes/:slug"
+
+[[menu.main]]
+name = "home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "notes"
+url = "/notes/"
+weight = 2
+
+[[menu.main]]
+name = "repos"
+url = "/repos/"
+weight = 3
+
+[[menu.main]]
+name = "rss"
+url = "/notes/index.xml"
+weight = 4
+
