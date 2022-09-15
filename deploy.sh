@@ -21,6 +21,7 @@ repos[post_image]=$HOME/playground/post_image
 repos[maildir]=$HOME/playground/maildir
 repos[znc-oneway-relay]=$HOME/playground/znc-oneway-relay
 repos[dopewars-irc]=$HOME/playground/dopewars-irc
+repos[rj1.neocities.org]=$HOME/web/rj1.neocities.org
 
 # generate html for each repo
 args=""
