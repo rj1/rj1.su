@@ -3,8 +3,8 @@ title: sway on void linux without elogind
 date: "2022-08-14"
 ---
 
-these notes don't cover configuring sway, your terminal, etc. this is simple a
-a barebones breakdown of getting sway running w/ seat management and dbus.
+these notes don't cover configuring sway, your terminal, etc. this is a simple
+barebones breakdown of getting sway running w/ seat management and dbus.
 
 install information:
 - amd gpu
