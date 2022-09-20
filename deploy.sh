@@ -21,7 +21,8 @@ repos[post_image]=$HOME/playground/post_image
 repos[maildir]=$HOME/playground/maildir
 repos[znc-oneway-relay]=$HOME/playground/znc-oneway-relay
 repos[dopewars-irc]=$HOME/playground/dopewars-irc
-repos[rj1.neocities.org]=$HOME/web/rj1.neocities.org
+repos[rj1.localghost.org]=$HOME/web/rj1.localghost.org
+repos[recaptcha-prank]=$HOME/playground/recaptcha-prank
 
 # generate html for each repo
 args=""
@@ -57,7 +58,7 @@ cd $sitewebroot
 hugo --minify
 
 # upload
-neocities push --include-hidden --prune public
+rsync -azvhP public/ rj1.localghost.org:/home/rj1/web/rj1.localghost.org/public
 
 rm -rf public
 rm -rf $reposwebroot
