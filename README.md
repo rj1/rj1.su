@@ -1,5 +1,7 @@
 # personal website
 
-source files for my website, currently located @ https://rj1.localghost.org
+source files for [my website](https://rj1.su)
 
-the site is generated using hugo & stagit
+this site is generated using a combination of [hugo](https://gohugo.io/) and
+[my personal fork](https://rj1.su/repos/stagit) of
+[stagit](https://codemadness.org/stagit.html)

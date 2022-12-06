@@ -20,9 +20,11 @@ repos[stagit]=$HOME/playground/stagit
 repos[post_image]=$HOME/playground/post_image
 repos[maildir]=$HOME/playground/maildir
 repos[znc-oneway-relay]=$HOME/playground/znc-oneway-relay
-repos[dopewars-irc]=$HOME/playground/dopewars-irc
-repos[rj1.localghost.org]=$HOME/web/rj1.localghost.org
+repos[rj1.su]=$HOME/web/rj1.su
 repos[recaptcha-prank]=$HOME/playground/recaptcha-prank
+repos[aoc]=$HOME/playground/aoc
+repos[rofimpd]=$HOME/playground/rofimpd
+repos[chatgpt-irc]=$HOME/playground/chatgpt-irc
 
 # generate html for each repo
 args=""
@@ -58,9 +60,6 @@ cd $sitewebroot
 hugo --minify
 
 # upload
-rsync -azvhP public/ rj1.localghost.org:/home/rj1/web/rj1.localghost.org/public
+rsync -azvhP public/ fktown:/usr/jails/http/home/rj1/web/rj1.su/public
 
-rm -rf public
-rm -rf $reposwebroot
 rm -rf $HOME/tmp
-
