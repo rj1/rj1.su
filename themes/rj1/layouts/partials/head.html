@@ -1,10 +1,10 @@
 <header>
-	<div class="main">
-		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-	</div>
-	<nav>
-		{{ range .Site.Menus.main }}
-		<a href="{{ .URL }}">{{ .Name }}</a>
-		{{ end }}
-	</nav>
+  <div class="main">
+    <a href="{{ .Site.BaseURL }}"><img src="/img/rj1.svg" width="50" alt="{{ .Site.Title }}" /></a>
+  </div>
+  <nav>
+    {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
 </header>

@@ -88,14 +88,14 @@ table tr td {
   border: none;
 }
 
-a img {
+/* a img {
   border: 3px solid #ad69af;
   max-width: 100%;
-}
+} */
 
-a:hover img {
+/* a:hover img {
   border: 3px solid #98c379;
-}
+} */
 
 figure {
   box-sizing: border-box;
@@ -360,6 +360,10 @@ a {
 a:hover {
   background-color: #98c379;
   color: black;
+}
+
+.main a:hover {
+  background-color: transparent;
 }
 
 .site-description a {
