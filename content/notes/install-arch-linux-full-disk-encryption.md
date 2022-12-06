@@ -1,7 +1,7 @@
 ---
 title: arch linux installation notes
 date: "2021-05-16"
-lastmod: "2022-06-18"
+lastmod: "2022-12-05"
 ---
 
 install information:
@@ -25,6 +25,8 @@ timedatectl set-ntp true
 ```
 
 ## partitioning
+
+I use cfdisk
 
 | partition | size | code | fs |
 -------------------|-----------|------|------|
@@ -153,17 +155,8 @@ pacman -S intel-ucode
 ## software
 
 ```shell
-pacman -S sudo base-devel zsh git yadm openssh tmux pass wireguard-tools sway \
-waybar alacritty noto-fonts-cjk noto-fonts-emoji swappy weechat libnotify mako \
-notmuch mitmproxy oath-toolkit qrencode zbar grim slurp wf-recorder fzf swaybg \
-wl-clipboard swayidle firefox chromium ncmpcpp php python ruby ruby-docs foot \
-nmap bc mpd mpc ncmpcpp ripgrep fd qt5-wayland qt6-wayland mpv resolvconf \
-wireplumber pipewire pipewire-jack pipewire-alsa pipewire-pulse alsa-utils bat \
-man-db netcat rsync hugo isync msmtp w3m alot newsboat jq zathura zathura-pdf-mupdf
+pacman -S sudo base-devel zsh git tmux openssh
 ```
-
-## enable seat service
-systemctl enable seatd
 
 ## create user
 
@@ -177,30 +170,6 @@ passwd rj1
 ```shell
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 su rj1
-```
-
-## more software
-```shell
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru
-makepkg -si
-paru -S tessen rofi-lbonn-wayland pinentry-rofi pass-coffin pass-otp vimiv-qt \
-nerd-fonts-hack swaylock-effects-git nnn-nerd nvm dict dstask wob tomb
-```
-
-```shell
-yadm clone https://git.sr.ht/~rj1/dotfiles
-source $HOME/.config/zsh/.zprofile
-git clone https://github.com/sindresorhus/pure.git $XDG_CONFIG_HOME/zsh/pure
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $XDG_CONFIG_HOME/zsh/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $XDG_CONFIG_HOME/zsh/zsh-syntax-highlighting
-nvm install --lts
-```
-
-## enable services
-
-```shell
-systemctl --user enable pipewire pipewire-pulse wob.socket
 ```
 
 ## bootloader
@@ -243,6 +212,35 @@ bootctl list
 ```
 exit
 reboot
+```
+
+## software
+```
+sway waybar alacritty noto-fonts-cjk noto-fonts-emoji swappy weechat libnotify
+mako notmuch mitmproxy oath-toolkit qrencode zbar grim slurp wf-recorder fzf
+swaybg wl-clipboard swayidle firefox chromium ncmpcpp php python ruby ruby-docs
+foot nmap bc mpd mpc ncmpcpp ripgrep fd qt5-wayland qt6-wayland mpv resolvconf
+wireplumber pipewire pipewire-jack pipewire-alsa pipewire-pulse alsa-utils bat
+man-db netcat rsync hugo isync msmtp w3m alot newsboat jq zathura
+zathura-pdf-mupdf pass wireguard-tools yadm
+```
+
+## enable services
+systemctl enable seatd
+
+other ones like pipewire, etc.
+
+## aur software
+```shell
+git clone https://aur.archlinux.org/paru-bin.git
+cd paru
+makepkg -si
+paru -S tessen rofi-lbonn-wayland pinentry-rofi pass-coffin pass-otp vimiv-qt \
+nerd-fonts-hack swaylock-effects-git nnn-nerd nvm dict dstask wob tomb rofimpd
+```
+
+```shell
+yadm clone https://git.sr.ht/~rj1/dotfiles
 ```
 
 have fun!
