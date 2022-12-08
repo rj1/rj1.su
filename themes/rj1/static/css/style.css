@@ -130,8 +130,7 @@ figure h4::before {
 }
 
 pre code {
-  background-color: #ad69af;
-  color: white;
+  background-color: inherit;
   color: inherit;
   font-size: 100%;
   padding: 0;
@@ -431,7 +430,6 @@ a:hover {
 .highlight pre code[class*="language-bash"]::before,
 .highlight pre code[class*="language-sh"]::before {
   content: "shell";
-  background: #ad69af;
   color: white;
 }
 
